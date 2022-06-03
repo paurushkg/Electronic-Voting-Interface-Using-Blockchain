@@ -1,0 +1,42 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Election Details</title>
+    <link rel="stylesheet" href="{% static './src/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static './src/css/style.css'%}">
+    <link rel="stylesheet" href="{% static './src/css/select.css'%}">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="{% static './index.js'%}" type="text/javascript"></script>
+    <script src="{% static './src/js/app.j'%}s" type="text/javascript"></script>
+</head>
+
+<body style="background-color: #993CF3;">
+    <div class="main">
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Election Details</h2><br>
+                        <h4 class="form-title">Contract Adrress: {{ contractAddress }}</h2>
+                        {% for i in Proposals %}
+                            <h4 class="form-title">Candidate Name:{{i.0}}</h4>
+                        {% endfor %}
+                    </div>
+                    <div>
+                        <figure><img src="{% static './src/images/ashok.png'%}" width="250" alt="sign up image"></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

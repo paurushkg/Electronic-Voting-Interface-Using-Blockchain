@@ -1,0 +1,58 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Authorize Voter</title>
+    <link rel="stylesheet" href="{% static './src/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static './src/css/style.css'%}">
+    <link rel="stylesheet" href="{% static './src/css/select.css'%}">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="{% static './index.js'%}" type="text/javascript"></script>
+    <script src="{% static './src/js/app.j'%}s" type="text/javascript"></script>
+</head>
+
+<body style="background-color: #993CF3;">
+    <form method="POST", action=auth-voter>
+    <div class="main">
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Authorize Voter</h2>
+                        <form class="register-form" id="register-form">
+                            <div class="form-group">
+                                <input type="text" name="contract_address" placeholder="Booth Address" />
+                                <input type="text" name="voter_address" placeholder="Voter Account Address " />
+                            </div>
+                            <div class="form-group">
+                                
+                                <input type="text" name="account_address" placeholder="Admin ID" />
+                                <input type="password" name="private_key" placeholder="Admin Private Key" />
+                            </div>
+                            <div class="form-group form-button">
+                                <input type=submit class="form-submit" value="Authorize" readonly/>
+                            </div>
+                        </form>
+                        {% if auth %}
+                        <h4 class="form-title">Message: Voter Authorized! </h4>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <figure><img src="{% static './src/images/ashok.png'%}" width="250" alt="sign up image"></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    </form>
+
+</body>
+
+</html>
